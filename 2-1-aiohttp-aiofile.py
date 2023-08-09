@@ -38,7 +38,7 @@ async def write_genre(file_name):
     name of the given file
     """
 
-    async with aiohttp.ClientSession() as session:
+    async with aiohttp.ClientSession as session:
         async with session.get("https://binaryjazz.us/wp-json/genrenator/v1/genre") as response:
             genre = await response.json()
 
