@@ -16,14 +16,31 @@
 จงเปรียบเทียบผลของการสร้าง Task ระหว่าง gather(), wait() และ as_completed()
 
 """
+# Wed Aug  9 14:42:48 2023 - Microwave (Curry): Cooking 3 seconds...
+# Wed Aug  9 14:42:48 2023 - Microwave (Rice): Cooking 3 seconds...
+# Wed Aug  9 14:42:48 2023 - Microwave (Noodle): Cooking 3 seconds...
+# Wed Aug  9 14:42:51 2023 - Microwave (Curry): Finished cooking
+# Wed Aug  9 14:42:51 2023 - Microwave (Rice): Finished cooking
+# Wed Aug  9 14:42:51 2023 - Microwave (Noodle): Finished cooking
+# Curry is completed
+# Rice is completed
+# Noodle is completed
+# Executed in 3.01 seconds.
 
 import asyncio
 import time
 
 async def cook(food, t):
-    
+    print(f'{time.ctime()} - Microwave ({food}): Cooking {t} seconds...')
+    await asyncio.sleep(t)
+    print(f'{time.ctime()} - Microwave ({food}): Finished cooking')
+    return f'{food} is completed'
 
 async def main():
+    coros = [cook('Rice', 3), cook('Noodle', 3), cook('Curry', 3)]
+    for coro in asyncio.as_completed(coros):
+        result = await coro
+        print(result)
     
 
 if __name__ == '__main__':
