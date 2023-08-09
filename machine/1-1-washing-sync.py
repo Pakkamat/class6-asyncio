@@ -7,6 +7,12 @@
 
 เนื่องจากมีเครื่องซักผ้าที่สามารถพร้อมใช้งานได้ 2 เครื่องพร้อมกัน 
 """
+# Wed Aug  9 14:13:03 2023 - Washing Machine (Basket A): Put the coin
+# Wed Aug  9 14:13:03 2023 - Washing Machine (Basket A): Start washing...
+# Wed Aug  9 14:13:08 2023 - Washing Machine (Basket A): Finished washing
+# Wed Aug  9 14:13:08 2023 - Washing Machine (Basket B): Put the coin
+# Wed Aug  9 14:13:08 2023 - Washing Machine (Basket B): Start washing...
+# Wed Aug  9 14:13:13 2023 - Washing Machine (Basket B): Finished washing
 
 import time
 
