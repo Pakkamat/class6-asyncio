@@ -6,15 +6,15 @@
 import asyncio
 import time
 
-async def print_after(message):
+async def example(message):
     print(f"{time.ctime()} - start of", message)
     await asyncio.sleep(1)
     print(f"{time.ctime()} - end of", message)
 
 async def main():
     # Start coroutine twice (hopefully the start!)
-    first_awaitable = print_after("First call")
-    second_awaitable = print_after("Second call")
+    first_awaitable = example("First call")
+    second_awaitable = example("Second call")
     # Wwait for coroutine to finish
     await first_awaitable
     await second_awaitable
